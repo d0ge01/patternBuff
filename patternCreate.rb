@@ -6,20 +6,11 @@ if ARGV.size == 0
 end
 
 LIMIT = ARGV.first.to_i
-BIGA = []
-CORT = []
+
 c = 0
-str = ""
+
 ('A'..'Z').each do |x|
-	BIGA << x
-end
-
-('a'..'z').each do |x|
-	CORT << x
-end
-
-BIGA.each do |x|
-	CORT.each do |y|
+	('a'..'z').each do |y|
 		0.upto(10) do |z|
 			exit if c >= LIMIT
 			print x,y if ( c == LIMIT-2)
