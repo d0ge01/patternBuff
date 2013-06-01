@@ -9,26 +9,22 @@ LIMIT = ARGV.first.to_s
 x1 = LIMIT[0].chr
 y1 = LIMIT[1].chr
 z1 = LIMIT[2].chr.to_i
-BIGA = []
-CORT = []
+
 c = 0
-cont = []
+def exitx(c)
+	puts c
+	exit
+end
+
 ('A'..'Z').each do |x|
-	BIGA << x
-end
-
-('a'..'z').each do |x|
-	CORT << x
-end
-
-bigalpha = BIGA[0..(BIGA.index(x1))]
-
-bigalpha.each do |x|
-	CORT.each do |y|
+	('a'..'z').each do |y|
 		0.upto(10) do |z|
-			cont << "#{x}#{y}#{z}"
+			if ( ( x == x1 ) and ( y == y1 ) and ( z == z1 ))
+				exitx(c)
+			end
+			c += 3
 		end
 	end
 end
 
-puts (cont.index("#{x1}#{y1}#{z1}")+1) * 3
+
